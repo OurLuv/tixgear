@@ -120,7 +120,6 @@ function buildCardsInFront(){
                 tempVenueIdList = [];
         }
 
-
         //listeners
         let actionsDOM = document.querySelectorAll(".events__event");
         cityChoices.passedElement.element.addEventListener('change', changeVenues);

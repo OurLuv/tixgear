@@ -27,12 +27,14 @@
             var fid = props.attributes.fid;
             var token = props.attributes.token;
             function onChangeFid( newFid ) {
+                btnAvailable()
                 props.setAttributes( { fid: newFid } );
             }
             function onChangeToken( newToken ) {
+                btnAvailable()
                 props.setAttributes( { token: newToken } );
             }
-     
+            //todo: customization
             return el(
                 'div',
                 blockProps,
@@ -62,8 +64,8 @@
                     )
                 ),
                 el(
-                    "div",
-                    {className: "bil-btn", onClick: buildCards},
+                    "button",
+                    {className: "bil-btn bil-btn-unavailable", onClick: buildCards},
                     "Submit"
                 )
             );
@@ -107,9 +109,22 @@ function testFunc(){
     console.log("Test function is running")
 }
 
-//todo: make btn disabled if there are no changes in inputs
+function btnAvailable(){
+    let btn = document.querySelector(".bil-btn")
+    btn.classList.remove("bil-btn-unavailable")
+    btn.classList.add("bil-btn-available")
+    btn.disabled = false;
+}
+
+
+
+
 //sending API request to Bil24 and creating cards
 function buildCards(){
+    let btn = document.querySelector(".bil-btn")
+    btn.classList.add("bil-btn-unavailable")
+    btn.classList.remove("bil-btn-available")
+    btn.disabled = true;
     //getting values of fid & token
     let fidV
     let tokenV

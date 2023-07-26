@@ -21,9 +21,15 @@
     box-sizing: border-box;
 }
 
-.bil-btn:hover{
+.bil-btn-available:hover{
     color: #2261c6;
     border: 1px solid #2261c6;
+}
+
+.bil-btn-unavailable{
+    cursor: not-allowed;
+    color:#939393;
+    border: 1px solid #939393;
 }
 
 .bil-input{
