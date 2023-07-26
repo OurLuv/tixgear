@@ -4,7 +4,6 @@
     var useBlockProps = blockEditor.useBlockProps;
     const { useEffect } = wp.element;
     blocks.registerBlockType( 'wp-bil24/bil24', {
-
         attributes: {
             fid: {
                 type: 'string',
@@ -107,7 +106,11 @@
 function testFunc(){
     console.log("Test function is running")
 }
-
+let cityChoices;
+let venueChoices;
+let kindChoices;
+let isChoicersCalled = false
+//todo: make btn disabled if there are no changes in inputs
 //sending API request to Bil24 and creating cards
 function buildCards(){
     //getting values of fid & token
@@ -121,19 +124,18 @@ function buildCards(){
         return
     }
 
-    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="wrapper__events"></div></div>';
-    document.querySelector(".bil-btn").insertAdjacentHTML('afterend', elemInputs);
     
-    //building choices
-    let cityChoices;
-    let venueChoices;
-    let kindChoices;
-    const cityElement = document.querySelector('.cities-select');
-    cityChoices = new Choices(cityElement);
-    const venueElement = document.querySelector('.venues-select');
-    venueChoices = new Choices(venueElement);
-    const kindElement = document.querySelector('.kinds-select');
-    kindChoices = new Choices(kindElement);
+    if (isChoicersCalled == false){
+        let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="wrapper__events"></div></div>';
+        document.querySelector(".bil-btn").insertAdjacentHTML('afterend', elemInputs);
+        const cityElement = document.querySelector('.cities-select');
+        cityChoices = new Choices(cityElement);
+        const venueElement = document.querySelector('.venues-select');
+        venueChoices = new Choices(venueElement);
+        const kindElement = document.querySelector('.kinds-select');
+        kindChoices = new Choices(kindElement);
+        isChoicersCalled = true
+   }
 
 
     let zone = "test";
@@ -145,8 +147,8 @@ function buildCards(){
         zone = "test";
     }
     let request = {
-        fid: Number(fidV), //1248
-        token: tokenV, //"2876804e2c1741f1aa66",
+        fid: Number(fidV), //* 1248
+        token: tokenV, //* "2876804e2c1741f1aa66"
         locale: "ru",
         command: "GET_ALL_ACTIONS"
     };
@@ -173,7 +175,7 @@ function buildCards(){
             bilError.style.display="none"
         }
 
-
+        //todo: reset values
         //droplist city
         for(let i in result.cityList){
             cityChoices.setValue([result.cityList[i].cityName]);
@@ -198,8 +200,9 @@ function buildCards(){
         kindChoices.setChoiceByValue('');
 
 
-
+        //todo: wait til all cards are loaded and only then show it
         //create all cards    
+        document.querySelector(".wrapper__events").innerHTML = ""
         let tempCityId;
         let tempVenueId;
         let elem = '';  

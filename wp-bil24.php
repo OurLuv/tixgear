@@ -17,12 +17,20 @@
 
 
 
-function supporthost_block_01_register_block() {
+function wp_bil24_register_block() {
+	wp_enqueue_script( 'wp-bil24-bil24-view-script' );
     register_block_type( __DIR__ );
 	wp_enqueue_script(
 		"wp-bil24-script",
 		plugin_dir_url(__FILE__) . "choices/choices.min.js"
 	);
+	if ( ! is_admin() ) {
+		wp_enqueue_script(
+			"wp-bil24-script-front",
+			plugin_dir_url(__FILE__) . "index.js"
+		);
+	}
 }
 
-add_action( 'init', 'supporthost_block_01_register_block' );
+add_action( 'init', 'wp_bil24_register_block' );
+

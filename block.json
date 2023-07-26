@@ -4,15 +4,13 @@
     "name": "wp-bil24/bil24",
     "category": "widgets",
     "icon": "tickets-alt",
-    "editorScript": [
-        "file:./block.js",
-        "file:./index.js"      
-    ],
+    "editorScript": "file:./block.js" ,
     "editorStyle": [
         "file:./editor.css",
         "file:./choices/choices.min.css",
         "file:./custom.css"
     ],
+    "viewScript": "file:./index.js",
     "style": [
         "file:./style.css",
         "file:./custom.css"
