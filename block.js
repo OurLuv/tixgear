@@ -175,7 +175,6 @@ function buildCards(){
             bilError.style.display="none"
         }
 
-        //todo: reset values
         //droplist city
         for(let i in result.cityList){
             cityChoices.setValue([result.cityList[i].cityName]);

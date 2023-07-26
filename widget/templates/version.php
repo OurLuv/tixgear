@@ -1,0 +1,1 @@
+<div class="bil-version DIG" data-version="<?php print $version; ?>">v<?php print $version; ?>.{{config.version}} <?php print $updated; ?></div>

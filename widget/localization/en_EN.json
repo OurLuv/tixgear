@@ -1,0 +1,212 @@
+{
+	"days": ["Su","Mo","Tu","We","Th","Fr","Sa"],
+	"months":{
+		"01":"January",
+		"02":"February",
+		"03":"March",
+		"04":"April",
+		"05":"May",
+		"06":"June",
+		"07":"July",
+		"08":"August",
+		"09":"September",
+		"10":"October",
+		"11":"November",
+		"12":"December"
+	},
+	"menu":{
+		"events":"Events",
+		"orders":"Orders",
+		"tickets":{
+			"_tickets":"Tickets",
+			"_goods":"Goods"
+		},
+		"mecs":"Mecs",
+		"promocodes":"Promocodes",
+		"agreement":"Agreement"
+	},
+	"basket":{
+		"mini":{
+			"buy_button":"Buy"
+		},
+		"full":{
+			"full_name_placeholder":"First and lastname",
+			"phone_placeholder":"Phone number",
+			"empty":"Your cart is empty",
+			"cleared":"Cart cleared",
+			"charge":"Service charge:",
+			"total":"Order price:",
+			"agreement_prefix":"I have read this <a href='",
+			"agreement_suffix":"' target='_blank'>agreement</a> and agree to the terms and conditions</a>",
+			"buy_button":"Buy",
+			"clear":"Delete all",
+			"processing":"Order in progress..."
+		}
+	},
+	"email":{
+		"title":"Authorization",
+		"message":{
+			"anonymous":{
+				"_tickets":"Login as a ticket buyer by confirming your E-mail",
+				"_goods":"Login as a buyer by confirming your E-mail"
+			}
+		},
+		"button":{
+			"anonymous":"Login"
+		},
+		"success":"Email successfully verified"
+	},
+	"events":{
+		"title":"Purchasing Tickets",
+		"from":"Tickets from",
+		"rating":"Rating:",
+		"buy_button":{
+			"_tickets":"Buy tickets",
+			"_goods":"Buy goods"
+		},
+		"all_venues":"All Venues",
+		"all_kinds":"All kinds",
+		"search":"Search",
+		"no_results":{
+			"_tickets":"There are currently no tickets available for sale",
+			"_goods":"There are currently no products available for sale"
+		}
+	},
+	"event":{
+		"title":"Purchasing Tickets",
+		"entry":{
+			"title":{
+				"_tickets":"General admission:",
+				"_goods":"Product list:"
+			},
+			"sold_out":{
+				"_tickets":"There are currently no seats available for sale",
+				"_goods":"There are currently no products available for sale"
+			},
+			"warning":{
+				"_tickets":"Attention! General admission are booked when you go to the shopping cart",
+				"_goods":"Attention! Goods are booked when you go to the cart"
+			},
+			"scroll_to_scheme":"To seating plan",
+			"price":"Price:",
+			"available":"Available:",
+			"unit":{
+				"_tickets":"tix",
+				"_goods":"ps"
+			}
+		},
+		"scheme":{
+			"title":"Assigned seats:",
+			"scroll_to_entry":{
+				"_tickets":"General admission",
+				"_goods":"Product List"
+			},
+			"loader":"Loading seating plan...",
+			"rendering":"Updating available seats...",
+			"legend":{
+				"notation":"Notation",
+				"sold":"Sold",
+				"none":"Out of stock",
+				"reserved":"Reserved",
+				"my":"My"
+			},
+			"sector":"Sector:",
+			"row":"Row:",
+			"seat":"Seat:"
+		},
+		"tariffs":{
+			"title":"Tariff:",
+			"choose":"Choose a plan:"
+		},
+		"kdp":{
+			"title":"Enter access code",
+			"placeholder":"Access code",
+			"button":"Apply",
+			"message":"View closed by access code",
+			"required":"The input field is required, only numbers are allowed",
+			"ihave":"I know the code!"
+		},
+		"fanid":{
+			"title":"Entrance with a fan ID",
+			"placeholder":"Fan ID",
+			"button":"Apply",
+			"message":"Seat reservation is only possible with a valid fan ID",
+			"required":"The input field is required, only numbers are allowed"
+		}
+	},
+	"mecs":{
+		"title":"Maps",
+		"label":"Map",
+		"price":"Price:",
+		"total":"Total:",
+		"category":"Category:",
+		"city":"City:",
+		"number":"Mobile electronic card number",
+		"no_results":"No cards found",
+		"ins":"Details"
+	},
+	"promocodes":{
+		"title":"Promo codes",
+		"since":"Valid since",
+		"until":"until",
+		"discount":"discount",
+		"max_discount":"maximum discount by promo code",
+		"max_tickets":"max number of discounted tickets",
+		"set_title":"You can enter multiple promo codes separated by spaces.",
+		"set_placeholder":"Promo codes",
+		"set_button":"Add",
+		"set_error":"Promo code not added, invalid promo code.",
+		"sets_error":"No promo codes added, no valid promo codes.",
+		"set_success_prefix":"Promo code: ",
+		"sets_success_prefix":"Promo codes: ",
+		"no_results":"No promo codes found",
+		"set_success_suffix":{
+			"_tickets":" successfully added to the Personal Account. When buying tickets, the promo code is applied automatically. The discount amount and promo code are displayed in the cart",
+			"_goods":" successfully added to the Personal Account. When buying goods, the promotional code is applied automatically. The amount of the discount and the promotional code are displayed in the basket"
+		},
+		"sets_success_suffix":{
+			"_tickets":"Successfully added to the Personal Account. When buying tickets, promo codes are applied automatically. The discount amount and promo code are displayed in the cart",
+			"_goods":"Successfully added to the Personal Account. Promo codes are applied automatically when purchasing goods. The discount amount and promo code are displayed in the cart"
+		},
+		"unit":{
+			"_tickets":"tix",
+			"_goods":"pcs"
+		},
+		"ins":"Details"
+	},
+	"orders":{
+		"title":"Orders",
+		"created":"created:",
+		"count":{
+			"_tickets":"tickets:",
+			"_goods":"goods:"
+		},
+		"number":"Order no",
+		"price":"amount:",
+		"buy_button":"Pay",
+		"remove_button":"Remove",
+		"no_results":"No orders found"
+	},
+	"tickets":{
+		"title":{
+			"_tickets":"Tickets",
+			"_goods":"Products"
+		},
+		"remove_button":"Remove",
+		"open_button":"Open",
+		"no_results":{
+			"_tickets":"No tickets found",
+			"_goods":"No products found"
+		}
+	},
+	"success":{
+		"title":"Payment was successful",
+		"description":"Your Payment was successful. Your transaction has been completed, and tickets have been emailed to you",
+		"button":"Thank you, Ok!"
+	},
+	"fail":{
+		"title":"Payment failed",
+		"description":"Sorry, your payment failed. No charges were made.",
+		"button":"I understand thank you"
+	}
+}
