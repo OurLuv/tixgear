@@ -13,6 +13,7 @@
     "viewScript": "file:./index.js",
     "style": [
         "file:./style.css",
+        "file:./choices/choices.min.css",
         "file:./custom.css"
     ],
     "supports": {

@@ -73,7 +73,7 @@
             var blockProps = useBlockProps.save();
             return el('div',
                 {
-                    className: "display-none",
+                    className: "display-none bil-block",
                     blockProps
                 },
             
@@ -82,7 +82,7 @@
                     Object.assign( 
                         {
                             tagName: 'p',
-                            className: "display-none bil-input-fid",
+                            className: "bil-input-fid",
                             value: props.attributes.fid,
                         }
                     )
@@ -91,7 +91,7 @@
                     Object.assign( 
                         {
                             tagName: 'p',
-                            className: "display-none bil-input-token",
+                            className: "bil-input-token",
                             value: props.attributes.token,
                         }
                     )
@@ -106,10 +106,7 @@
 function testFunc(){
     console.log("Test function is running")
 }
-let cityChoices;
-let venueChoices;
-let kindChoices;
-let isChoicersCalled = false
+
 //todo: make btn disabled if there are no changes in inputs
 //sending API request to Bil24 and creating cards
 function buildCards(){
@@ -124,18 +121,21 @@ function buildCards(){
         return
     }
 
-    
-    if (isChoicersCalled == false){
-        let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="wrapper__events"></div></div>';
-        document.querySelector(".bil-btn").insertAdjacentHTML('afterend', elemInputs);
-        const cityElement = document.querySelector('.cities-select');
-        cityChoices = new Choices(cityElement);
-        const venueElement = document.querySelector('.venues-select');
-        venueChoices = new Choices(venueElement);
-        const kindElement = document.querySelector('.kinds-select');
-        kindChoices = new Choices(kindElement);
-        isChoicersCalled = true
-   }
+    let cityChoices;
+    let venueChoices;
+    let kindChoices;
+    if (document.querySelector(".my_wrapper") != undefined){
+        document.querySelector(".my_wrapper").innerHTML = ""
+    }
+    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="wrapper__events"></div></div>';
+    document.querySelector(".bil-btn").insertAdjacentHTML('afterend', elemInputs);
+    const cityElement = document.querySelector('.cities-select');
+    cityChoices = new Choices(cityElement);
+    const venueElement = document.querySelector('.venues-select');
+    venueChoices = new Choices(venueElement);
+    const kindElement = document.querySelector('.kinds-select');
+    kindChoices = new Choices(kindElement);
+    isChoicersCalled = true
 
 
     let zone = "test";
