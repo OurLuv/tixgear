@@ -63,9 +63,17 @@
     line-height: 18px;
 }
 
+.events__event{
+    color: inherit!important;
+}
+
 /*choices*/
 .choices__inner{
     background-color: #fff!important;
+}
+
+.choices__item{
+    color: black
 }
 
 .choices{

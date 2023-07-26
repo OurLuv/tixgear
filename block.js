@@ -214,8 +214,7 @@ function buildCards(){
         kindChoices.setChoiceByValue('');
 
 
-        //todo: wait til all cards are loaded and only then show it
-        //create all cards    
+        //?create all cards    
         document.querySelector(".wrapper__events").innerHTML = ""
         let tempCityId;
         let tempVenueId;
