@@ -2,7 +2,6 @@ console.log("index.js loaded")
 
 
 
-//todo: make btn disabled if there are no changes in inputs
 //sending API request to Bil24 and creating cards
 function buildCardsInFront(){
     //getting values of fid & token
@@ -19,7 +18,7 @@ function buildCardsInFront(){
     let cityChoices;
     let venueChoices;
     let kindChoices;
-    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="wrapper__events"></div></div>';
+    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="bil-spinload"></div><div class="wrapper__events"></div></div>';
     document.querySelector(".bil-block").insertAdjacentHTML('afterend', elemInputs);
     const cityElement = document.querySelector('.cities-select');
     cityChoices = new Choices(cityElement);
@@ -90,8 +89,7 @@ function buildCardsInFront(){
         }   
         kindChoices.setChoiceByValue('');
 
-
-        //todo: wait til all cards are loaded and only then show it
+        document.querySelector(".bil-spinload").style.display="none"
         //create all cards    
         document.querySelector(".wrapper__events").innerHTML = ""
         let tempCityId;

@@ -34,7 +34,6 @@
                 btnAvailable()
                 props.setAttributes( { token: newToken } );
             }
-            //todo: customization
             return el(
                 'div',
                 blockProps,
@@ -142,15 +141,15 @@ function buildCards(){
     if (document.querySelector(".my_wrapper") != undefined){
         document.querySelector(".my_wrapper").innerHTML = ""
     }
-    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="wrapper__events"></div></div>';
+    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="bil-spinload"></div><div class="wrapper__events"></div></div>';
     document.querySelector(".bil-btn").insertAdjacentHTML('afterend', elemInputs);
+    document.querySelector(".bil-spinload").style.display="block"
     const cityElement = document.querySelector('.cities-select');
     cityChoices = new Choices(cityElement);
     const venueElement = document.querySelector('.venues-select');
     venueChoices = new Choices(venueElement);
     const kindElement = document.querySelector('.kinds-select');
     kindChoices = new Choices(kindElement);
-    isChoicersCalled = true
 
 
     let zone = "test";
@@ -213,7 +212,7 @@ function buildCards(){
         }   
         kindChoices.setChoiceByValue('');
 
-
+        document.querySelector(".bil-spinload").style.display="none"
         //?create all cards    
         document.querySelector(".wrapper__events").innerHTML = ""
         let tempCityId;
