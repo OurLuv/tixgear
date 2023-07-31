@@ -1,7 +1,6 @@
 console.log("index.js loaded")
 
 
-
 //sending API request to Bil24 and creating cards
 function buildCardsInFront(){
     //getting values of fid & token
@@ -19,7 +18,7 @@ function buildCardsInFront(){
     let venueChoices;
     let kindChoices;
     let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="bil-spinload"></div><div class="wrapper__events"></div></div>';
-    document.querySelector(".bil-block").insertAdjacentHTML('afterend', elemInputs);
+    document.querySelector(".wp-block-wp-bil24-bil24").insertAdjacentHTML('afterbegin', elemInputs);
     const cityElement = document.querySelector('.cities-select');
     cityChoices = new Choices(cityElement);
     const venueElement = document.querySelector('.venues-select');

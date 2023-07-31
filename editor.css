@@ -53,6 +53,9 @@
     width: 300px;
 }
 
+.bil-input-fid, .bil-input-token{
+    display: block;
+}
 
 
 

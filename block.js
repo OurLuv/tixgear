@@ -73,11 +73,7 @@
         save: function ( props ) {
             var blockProps = useBlockProps.save();
             return el('div',
-                {
-                    className: "display-none bil-block",
-                    blockProps
-                },
-            
+                blockProps,    
                 el(
                     RichText.Content,
                     Object.assign( 
