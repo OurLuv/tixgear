@@ -1,7 +1,7 @@
 console.log("index.js loaded")
 
 
-//sending API request to Bil24 and creating cards
+//sending API request to server and creating cards
 function buildCardsInFront(){
     //getting values of fid & token
     let fidV
@@ -18,7 +18,7 @@ function buildCardsInFront(){
     let venueChoices;
     let kindChoices;
     let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="bil-spinload"></div><div class="wrapper__events"></div></div>';
-    document.querySelector(".wp-block-wp-bil24-bil24").insertAdjacentHTML('afterbegin', elemInputs);
+    document.querySelector(".wp-block-wp-tixgear-tixgear").insertAdjacentHTML('afterbegin', elemInputs);
     const cityElement = document.querySelector('.cities-select');
     cityChoices = new Choices(cityElement);
     const venueElement = document.querySelector('.venues-select');
@@ -111,7 +111,7 @@ function buildCardsInFront(){
 
             }
             
-                elem = '<a href="/wp-content/plugins/wp-bil24/widget/#/?frontendId=' + request.fid + '&token=' + request.token + '&id=' + actions[i].actionId + '&cityId=' + actions[i].actionEventList[0].cityId + '&agr=' + location.protocol + '//' + location.hostname + '/bil24-wp-script/agreement/agreement.html&zone=' + zone + '" class="events__event" data-cityid= "' + tempCityIdList + '" data-kindid="' + actions[i].kindId + '" data-venueid="' +tempVenueIdList +'"><div class="event__img_wrapper"><img src="'+ actions[i].smallPosterUrl + '" alt="" class="event__img"></div><p class="event__name">' + actions[i].actionName + '</p><span class="event__inf">' + actions[i].fullActionName + '</span><span class="event__inf">' + actions[i].firstEventDate + '</span><span class="event__inf">' + actions[i].actionEventTime + '</span><span class="event__inf">от ' + actions[i].minPrice + ' руб.</span></a>';
+                elem = '<a href="/wp-content/plugins/wp-tixgear/widget/#/?frontendId=' + request.fid + '&token=' + request.token + '&id=' + actions[i].actionId + '&cityId=' + actions[i].actionEventList[0].cityId + '&agr=' + location.protocol + '//' + location.hostname + '/wp-content/plugins/wp-tixgear/agreement.html/agreement.html&zone=' + zone + '" class="events__event" data-cityid= "' + tempCityIdList + '" data-kindid="' + actions[i].kindId + '" data-venueid="' +tempVenueIdList +'"><div class="event__img_wrapper"><img src="'+ actions[i].smallPosterUrl + '" alt="" class="event__img"></div><p class="event__name">' + actions[i].actionName + '</p><span class="event__inf">' + actions[i].fullActionName + '</span><span class="event__inf">' + actions[i].firstEventDate + '</span><span class="event__inf">' + actions[i].actionEventTime + '</span><span class="event__inf">от ' + actions[i].minPrice + ' руб.</span></a>';
                 document.querySelector(".wrapper__events").insertAdjacentHTML('afterbegin', elem);
                 tempCityIdList = [];
                 tempVenueIdList = [];

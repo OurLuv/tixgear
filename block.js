@@ -3,7 +3,7 @@
     var RichText = blockEditor.RichText;
     var useBlockProps = blockEditor.useBlockProps;
     const { useEffect } = wp.element;
-    blocks.registerBlockType( 'wp-bil24/bil24', {
+    blocks.registerBlockType( 'wp-tixgear/tixgear', {
         attributes: {
             fid: {
                 type: 'string',
@@ -114,7 +114,7 @@ function btnAvailable(){
 
 
 
-//sending API request to Bil24 and creating cards
+//sending API request to server and creating cards
 function buildCards(){
     let btn = document.querySelector(".bil-btn")
     btn.classList.add("bil-btn-unavailable")
@@ -231,7 +231,7 @@ function buildCards(){
 
             }
             
-                elem = '<a href="/widget/#/?frontendId=' + request.fid + '&token=' + request.token + '&id=' + actions[i].actionId + '&cityId=' + actions[i].actionEventList[0].cityId + '&agr=' + location.protocol + '//' + location.hostname + '/bil24-wp-script/agreement/agreement.html&zone=' + zone + '" class="events__event" data-cityid= "' + tempCityIdList + '" data-kindid="' + actions[i].kindId + '" data-venueid="' +tempVenueIdList +'"><div class="event__img_wrapper"><img src="'+ actions[i].smallPosterUrl + '" alt="" class="event__img"></div><p class="event__name">' + actions[i].actionName + '</p><span class="event__inf">' + actions[i].fullActionName + '</span><span class="event__inf">' + actions[i].firstEventDate + '</span><span class="event__inf">' + actions[i].actionEventTime + '</span><span class="event__inf">от ' + actions[i].minPrice + ' руб.</span></a>';
+                elem = '<a href="/widget/#/?frontendId=' + request.fid + '&token=' + request.token + '&id=' + actions[i].actionId + '&cityId=' + actions[i].actionEventList[0].cityId + '&agr=' + location.protocol + '//' + location.hostname + '/wp-content/plugins/wp-tixgear/agreement.html&zone=' + zone + '" class="events__event" data-cityid= "' + tempCityIdList + '" data-kindid="' + actions[i].kindId + '" data-venueid="' +tempVenueIdList +'"><div class="event__img_wrapper"><img src="'+ actions[i].smallPosterUrl + '" alt="" class="event__img"></div><p class="event__name">' + actions[i].actionName + '</p><span class="event__inf">' + actions[i].fullActionName + '</span><span class="event__inf">' + actions[i].firstEventDate + '</span><span class="event__inf">' + actions[i].actionEventTime + '</span><span class="event__inf">от ' + actions[i].minPrice + ' руб.</span></a>';
                 document.querySelector(".wrapper__events").insertAdjacentHTML('afterbegin', elem);
                 tempCityIdList = [];
                 tempVenueIdList = [];
