@@ -151,9 +151,9 @@ function buildCards(){
     let zone = "test";
     let url;
     if(zone == "real"){
-        url = "https://api.bil24.pro/json";
+        url = "https://api.tixgear.com/json";
     }else{
-        url = "https://api.bil24.pro:1240/json";
+        url = "https://api.tixgear.com:1240/json";
         zone = "test";
     }
     let request = {
