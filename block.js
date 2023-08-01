@@ -2,6 +2,7 @@
     var el = element.createElement;
     var RichText = blockEditor.RichText;
     var useBlockProps = blockEditor.useBlockProps;
+    var CheckboxControl = wp.components.CheckboxControl;
     const { useEffect } = wp.element;
     blocks.registerBlockType( 'wp-tixgear/tixgear', {
         attributes: {
@@ -15,17 +16,21 @@
                 source: 'html',
                 selector: 'p.bil-input-token',
             },
+            checkboxValue: {
+                type: 'boolean',
+                default: false,
+            }
         },
         edit: function ( props ) {
             
             useEffect( () => {  
-                console.log(document.querySelector(".bil-input-fid"))
                 buildCards()
               }, [] );
 
             var blockProps = useBlockProps();
             var fid = props.attributes.fid;
             var token = props.attributes.token;
+            var checkBox = props.attributes.checkboxValue;
             function onChangeFid( newFid ) {
                 btnAvailable()
                 props.setAttributes( { fid: newFid } );
@@ -33,6 +38,10 @@
             function onChangeToken( newToken ) {
                 btnAvailable()
                 props.setAttributes( { token: newToken } );
+            }
+            function onChangeCheckbox( newValue ) {
+                btnAvailable()
+                props.setAttributes( { checkboxValue: newValue } );
             }
             return el(
                 'div',
@@ -62,6 +71,13 @@
                         }
                     )
                 ),
+                el( CheckboxControl, {
+                        label: 'Test zone',
+                        checked: checkBox,
+                        className: "bil-input-box",
+                        onChange: onChangeCheckbox,
+                    } 
+                ),
                 el(
                     "button",
                     {className: "bil-btn bil-btn-unavailable", onClick: buildCards},
@@ -79,20 +95,25 @@
                     Object.assign( 
                         {
                             tagName: 'p',
-                            className: "bil-input-fid",
+                            className: "bil-input bil-input-fid",
                             value: props.attributes.fid,
                         }
                     )
-                ),el(
+                ),
+                el(
                     RichText.Content,
                     Object.assign( 
                         {
                             tagName: 'p',
-                            className: "bil-input-token",
+                            className: "bil-input bil-input-token",
                             value: props.attributes.token,
                         }
                     )
-                )
+                ),
+                el( 'div', {
+                    className: "bil-input",
+                    checked: props.attributes.checkboxValue,
+                } )
             );
         },
     } 
@@ -120,6 +141,10 @@ function buildCards(){
     btn.classList.add("bil-btn-unavailable")
     btn.classList.remove("bil-btn-available")
     btn.disabled = true;
+
+    if (document.querySelector(".my_wrapper") != undefined){
+        document.querySelector(".my_wrapper").innerHTML = ""
+    }
     //getting values of fid & token
     let fidV
     let tokenV
@@ -134,10 +159,7 @@ function buildCards(){
     let cityChoices;
     let venueChoices;
     let kindChoices;
-    if (document.querySelector(".my_wrapper") != undefined){
-        document.querySelector(".my_wrapper").innerHTML = ""
-    }
-    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!</div><div class="bil-spinload"></div><div class="wrapper__events"></div></div>';
+    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!<br>Please, also check which zone is selected</div><div class="bil-spinload"></div><div class="wrapper__events"></div></div>';
     document.querySelector(".bil-btn").insertAdjacentHTML('afterend', elemInputs);
     document.querySelector(".bil-spinload").style.display="block"
     const cityElement = document.querySelector('.cities-select');
@@ -147,15 +169,19 @@ function buildCards(){
     const kindElement = document.querySelector('.kinds-select');
     kindChoices = new Choices(kindElement);
 
-
-    let zone = "test";
+    //checking if the zone real or test
+    let zone = "real"
+    if(document.querySelector(".bil-input-box div span input").checked){
+        zone = "test"
+    };
+    console.log(zone)
     let url;
     if(zone == "real"){
         url = "https://api.tixgear.com/json";
     }else{
         url = "https://api.tixgear.com:1240/json";
-        zone = "test";
     }
+
     let request = {
         fid: Number(fidV), //* 1248
         token: tokenV, //* "2876804e2c1741f1aa66"
@@ -181,6 +207,8 @@ function buildCards(){
         let bilError =  document.querySelector(".error-msg")
         if (result.resultCode == 101){
             bilError.style.display="block"
+            document.querySelector(".bil-spinload").style.display="none"
+            return
         }else{
             bilError.style.display="none"
         }
