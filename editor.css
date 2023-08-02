@@ -1,0 +1,66 @@
+.wp-block-wp-tixgear-tixgear {
+    background: white;
+    padding: 20px;
+}
+
+.test{
+    padding: 30px;  
+}
+
+.bil-btn{
+    cursor: pointer;
+    border: 1px solid black;
+    margin: 10px 0 40px 0;
+    padding: 5px 10px;
+    width: 100px;
+    color: black;
+    transition: all .3s;
+    font-size: 12pt;
+    background: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bil-btn-available:hover{
+    color: #2261c6;
+    border: 1px solid #2261c6;
+}
+
+.bil-btn-unavailable{
+    cursor: not-allowed;
+    color:#939393;
+    border: 1px solid #939393;
+}
+
+.bil-input{
+    background: white;
+    border: 1px solid black!important;
+    border-radius: 0!important;
+    margin: 10px 10px 10px 0;
+    padding: 5px 10px;
+    color: black;
+    font-size: 12pt;
+    outline:none;
+    box-sizing: border-box;
+    transition: all .3s;
+}
+
+.bil-input-fid{
+    width: 120px;
+}
+
+.bil-input-token{
+    width: 300px;
+}
+
+.bil-input-fid, .bil-input-token{
+    display: block;
+}
+
+
+
+
+
+
+
+

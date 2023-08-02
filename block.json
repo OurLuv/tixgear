@@ -1,0 +1,27 @@
+{
+    "apiVersion": 2,
+    "title": "TixGear",
+    "name": "wp-tixgear/tixgear",
+    "category": "widgets",
+    "icon": "tickets-alt",
+    "editorScript": "file:./block.js" ,
+    "editorStyle": [
+        "file:./editor.css",
+        "file:./choices/choices.min.css",
+        "file:./custom.css"
+    ],
+    "viewScript": "file:./index.js",
+    "style": [
+        "file:./style.css",
+        "file:./choices/choices.min.css",
+        "file:./custom.css"
+    ],
+    "supports": {
+        "color": {
+            "text": true,
+            "background": true,
+            "link": true
+        },
+        "align": true
+    }
+}

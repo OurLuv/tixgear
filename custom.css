@@ -1,0 +1,135 @@
+.inputs__input {
+    font-size: 15px;
+    padding: 8px;
+    border: 1px solid #e2e2e2!important;
+    width: 300px;
+    margin: 0 10px!important;
+    font-family: Roboto;
+    outline: none!important;
+    transition: all .3s;
+}
+
+.events__event {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    cursor:pointer;
+    transition: all .3s;
+}
+
+.events__event:hover{
+    box-shadow: 6px 6px 2px 1px rgb(123 123 123 / 20%);
+}
+
+.wrapper__events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+
+.wrapper__inputs {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.error-msg{
+    display: none;
+    color:#a40303;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.event__name {
+    font-size: 18px;
+    color: #1c1fa1;
+    line-height: 25px;
+}
+
+.event__inf, .event__name{
+    font-family: Roboto;
+}
+
+.event__inf {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 18px;
+    opacity: .9;
+    color: inherit!important;
+}
+.event__name{
+    margin-top: 15px!important;
+    color: inherit!important;
+}
+
+.events__event{
+    color: inherit!important;
+}
+
+/*choices*/
+.choices__inner{
+    background-color: #fff!important;
+}
+
+.choices__item{
+    color: black
+}
+
+.choices{
+    max-width: 300px;
+    width: 100%;
+    margin: 10px;
+    height: 53px;
+    border-color: #e2e2e2!important;
+}
+
+.choices__item{
+    font-family: Roboto;
+}
+
+/*
+.is-focused .choices__inner, .is-open .choices__inner{
+    border-color: #e2e2e2!important;
+}
+*/
+
+.bil-spinload{
+    width: 50px;
+    height: 50px;
+    border: 4px solid #ddd;
+    border-top: 4px solid #00aa30;
+    border-radius: 50%;
+    margin: 20px auto 0 auto;
+    animation: bil-spin 1s linear infinite;
+}
+
+@keyframes bil-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+@media screen and (max-width: 1000px){
+    .wrapper__inputs{
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputs__input{
+        margin: 10px 0;
+        width: 100%;
+    }
+    .events__event{
+        margin: 20px 0;
+    }
+}
