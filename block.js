@@ -4,7 +4,7 @@
     var useBlockProps = blockEditor.useBlockProps;
     var CheckboxControl = wp.components.CheckboxControl;
     const { useEffect } = wp.element;
-    blocks.registerBlockType( 'wp-tixgear/tixgear', {
+    blocks.registerBlockType( 'tixgear/tixgear', {
         attributes: {
             fid: {
                 type: 'string',
