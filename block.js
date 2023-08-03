@@ -183,8 +183,8 @@ function buildCards(){
     }
 
     let request = {
-        fid: Number(fidV), //* 1248
-        token: tokenV, //* "2876804e2c1741f1aa66"
+        fid: Number(fidV), //* 1232
+        token: tokenV, //* "fe6872bca121b6c3476b"
         locale: "ru",
         command: "GET_ALL_ACTIONS"
     };
@@ -259,7 +259,7 @@ function buildCards(){
 
             }
             
-                elem = '<a href="/widget/#/?frontendId=' + request.fid + '&token=' + request.token + '&id=' + actions[i].actionId + '&cityId=' + actions[i].actionEventList[0].cityId + '&agr=' + location.protocol + '//' + location.hostname + '/wp-content/plugins/wp-tixgear/agreement.html&zone=' + zone + '" class="events__event" data-cityid= "' + tempCityIdList + '" data-kindid="' + actions[i].kindId + '" data-venueid="' +tempVenueIdList +'"><div class="event__img_wrapper"><img src="'+ actions[i].smallPosterUrl + '" alt="" class="event__img"></div><p class="event__name">' + actions[i].actionName + '</p><span class="event__inf">' + actions[i].fullActionName + '</span><span class="event__inf">' + actions[i].firstEventDate + '</span><span class="event__inf">' + actions[i].actionEventTime + '</span><span class="event__inf">от ' + actions[i].minPrice + ' руб.</span></a>';
+                elem = '<a href="/widget/#/?frontendId=' + request.fid + '&token=' + request.token + '&id=' + actions[i].actionId + '&cityId=' + actions[i].actionEventList[0].cityId + '&agr=' + location.protocol + '//' + location.hostname + '/wp-content/plugins/tixgear/agreement.html&zone=' + zone + '" class="events__event" data-cityid= "' + tempCityIdList + '" data-kindid="' + actions[i].kindId + '" data-venueid="' +tempVenueIdList +'"><div class="event__img_wrapper"><img src="'+ actions[i].smallPosterUrl + '" alt="" class="event__img"></div><p class="event__name">' + actions[i].actionName + '</p><span class="event__inf">' + actions[i].fullActionName + '</span><span class="event__inf">' + actions[i].firstEventDate + '</span><span class="event__inf">' + actions[i].actionEventTime + '</span><span class="event__inf">от ' + actions[i].minPrice + ' руб.</span></a>';
                 document.querySelector(".wrapper__events").insertAdjacentHTML('afterbegin', elem);
                 tempCityIdList = [];
                 tempVenueIdList = [];

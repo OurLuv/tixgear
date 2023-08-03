@@ -1,7 +1,7 @@
 {
     "apiVersion": 2,
     "title": "TixGear",
-    "name": "wp-tixgear/tixgear",
+    "name": "tixgear/tixgear",
     "category": "widgets",
     "icon": "tickets-alt",
     "editorScript": "file:./block.js" ,
