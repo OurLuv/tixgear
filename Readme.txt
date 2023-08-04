@@ -22,7 +22,7 @@ This section describes how to install the plugin and get it working.
 
 Don't forget to save the changes on the page
 
-P.S. You can use standart parameters to check how it's working:
+P.S. You can use standard parameters to check how it's working:
 fid: 1232
 token: fe6872bca121b6c3476b
 zone: test
