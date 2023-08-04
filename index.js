@@ -28,13 +28,17 @@ function buildCardsInFront(){
 
 
 
-    let zone = "test";
+    //checking if the zone real or test
+    let zone = "real"
+    if(document.querySelector(".bil-input-box div span input").checked){
+        zone = "test"
+    };
+    console.log(zone)
     let url;
     if(zone == "real"){
-        url = "https://api.bil24.pro/json";
+        url = "https://api.tixgear.com/json";
     }else{
-        url = "https://api.bil24.pro:1240/json";
-        zone = "test";
+        url = "https://api.tixgear.com:1240/json";
     }
     let request = {
         fid: Number(fidV), //* 1248
