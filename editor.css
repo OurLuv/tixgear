@@ -1,4 +1,4 @@
-.wp-block-wp-tixgear-tixgear {
+.wp-block-tixgear-tixgear {
     background: white;
     padding: 20px;
 }
@@ -57,6 +57,9 @@
     display: block;
 }
 
+.bil-input-box {
+    color: black;
+}
 
 
 
