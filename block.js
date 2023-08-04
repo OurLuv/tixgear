@@ -111,7 +111,8 @@
                     )
                 ),
                 el( 'div', {
-                    className: "bil-input",
+                    className: "bil-input bil-input-box",
+                    "data-tix-bool": props.attributes.checkboxValue ? "true" : "false",
                     checked: props.attributes.checkboxValue,
                 } )
             );

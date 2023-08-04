@@ -30,9 +30,9 @@ function buildCardsInFront(){
 
     //checking if the zone real or test
     let zone = "real"
-    if(document.querySelector(".bil-input-box div span input").checked){
+    if(document.querySelector(".bil-input-box").getAttribute('data-tix-bool') == "true"){
         zone = "test"
-    };
+    }
     console.log(zone)
     let url;
     if(zone == "real"){
@@ -41,8 +41,8 @@ function buildCardsInFront(){
         url = "https://api.tixgear.com:1240/json";
     }
     let request = {
-        fid: Number(fidV), //* 1248
-        token: tokenV, //* "2876804e2c1741f1aa66"
+        fid: Number(fidV), 
+        token: tokenV, 
         locale: "ru",
         command: "GET_ALL_ACTIONS"
     };
