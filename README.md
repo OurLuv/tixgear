@@ -1,9 +1,9 @@
-# wp-tixgear
+# Tixgear - plugin for Wordpress
  This is a plugin for integration with TixGear's API for selling tickets and etc.
 
 ## Installation 
 This section describes how to install the plugin and get it working.
-1. Upload this directory to the `/wp-content/plugins/`. Note that the folder should be named **wp-tixgear**: <br/>`/wp-content/plugins/wp-tixgear`.
+1. Upload this directory to the `/wp-content/plugins/`. Note that the folder should be named **tixgear**: <br/>`/wp-content/plugins/tixgear`.
 
 2. Activate the plugin through the '*Plugins*' menu in WordPress.
 
