@@ -17,6 +17,7 @@
     padding: 10px;
     border: 1px solid #e2e2e2;
     background: #fff;
+    text-decoration: none!important;
     cursor:pointer;
     transition: all .3s;
 }

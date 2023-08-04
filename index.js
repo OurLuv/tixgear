@@ -17,7 +17,7 @@ function buildCardsInFront(){
     let cityChoices;
     let venueChoices;
     let kindChoices;
-    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="Город"><option value="" selected>Город</option></select><select class="select venues-select"><option value="">Площадка</option></select><select class="select kinds-select"><option value="">Виды</option></select></div><div class="error-msg">Fid or token are incorrect!<br>Please, also check which zone is selected</div><div class="bil-spinload"></div><div class="wrapper__events"></div></div>';
+    let elemInputs = '<div class="my_wrapper"><div class="wrapper__inputs"><select class="select cities-select" placeholder="City"><option value="" selected>City</option></select><select class="select venues-select"><option value="">Venue</option></select><select class="select kinds-select"><option value="">Kind</option></select></div><div class="error-msg">Fid or token are incorrect!<br>Please, also check which zone is selected</div><div class="bil-spinload"></div><div class="wrapper__events"></div></div>';
     document.querySelector(".wp-block-tixgear-tixgear").insertAdjacentHTML('afterbegin', elemInputs);
     const cityElement = document.querySelector('.cities-select');
     cityChoices = new Choices(cityElement);
@@ -117,7 +117,7 @@ function buildCardsInFront(){
 
             }
             
-                elem = '<a href="/wp-content/plugins/tixgear/widget/#/?frontendId=' + request.fid + '&token=' + request.token + '&id=' + actions[i].actionId + '&cityId=' + actions[i].actionEventList[0].cityId + '&agr=' + location.protocol + '//' + location.hostname + '/wp-content/plugins/tixgear/agreement.html&zone=' + zone + '" class="events__event" data-cityid= "' + tempCityIdList + '" data-kindid="' + actions[i].kindId + '" data-venueid="' +tempVenueIdList +'"><div class="event__img_wrapper"><img src="'+ actions[i].smallPosterUrl + '" alt="" class="event__img"></div><p class="event__name">' + actions[i].actionName + '</p><span class="event__inf">' + actions[i].fullActionName + '</span><span class="event__inf">' + actions[i].firstEventDate + '</span><span class="event__inf">' + actions[i].actionEventTime + '</span><span class="event__inf">от ' + actions[i].minPrice + ' руб.</span></a>';
+                elem = '<a href="/wp-content/plugins/tixgear/widget/#/?frontendId=' + request.fid + '&token=' + request.token + '&id=' + actions[i].actionId + '&cityId=' + actions[i].actionEventList[0].cityId + '&agr=' + location.protocol + '//' + location.hostname + '/wp-content/plugins/tixgear/agreement.html&zone=' + zone + '" class="events__event" data-cityid= "' + tempCityIdList + '" data-kindid="' + actions[i].kindId + '" data-venueid="' +tempVenueIdList +'"><div class="event__img_wrapper"><img src="'+ actions[i].smallPosterUrl + '" alt="" class="event__img"></div><p class="event__name">' + actions[i].actionName + '</p><span class="event__inf">' + actions[i].fullActionName + '</span><span class="event__inf">' + actions[i].firstEventDate + '</span><span class="event__inf">from ' + actions[i].minPrice + '</span></a>';
                 document.querySelector(".wrapper__events").insertAdjacentHTML('afterbegin', elem);
                 tempCityIdList = [];
                 tempVenueIdList = [];
