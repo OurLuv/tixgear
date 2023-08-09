@@ -43,7 +43,7 @@ function buildCardsInFront(){
     let request = {
         fid: Number(fidV), 
         token: tokenV, 
-        locale: "ru",
+        locale: "en",
         command: "GET_ALL_ACTIONS"
     };
     

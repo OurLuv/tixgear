@@ -186,7 +186,7 @@ function buildCards(){
     let request = {
         fid: Number(fidV), //* 1232
         token: tokenV, //* "fe6872bca121b6c3476b"
-        locale: "ru",
+        locale: "en",
         command: "GET_ALL_ACTIONS"
     };
     
